@@ -192,7 +192,7 @@ __run() {
           echo "[CRON] No changes to commit"
         else
           git commit -m "Update dashboard $(date -Iseconds)"
-          git push origin main || echo "[CRON] Git push failed"
+          git push -uf origin main || echo "[CRON] Git push failed"
         fi
       fi
     fi
