@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Created-By: Apache Maven Bundle Plugin
+Built-By: shroffk
+Build-Jdk: 11.0.21
+Bnd-LastModified: 1702663706692
+Bundle-Description: Parent project for the EPICS Core Libraries.
+Bundle-DocURL: http://www.aps.anl.gov/epics/
+Bundle-License: https://tldrlegal.com/license/mit-license
+Bundle-ManifestVersion: 2
+Bundle-Name: pvDataJava
+Bundle-SymbolicName: org.epics.pvdata
+Bundle-Vendor: EPICS
+Bundle-Version: 6.1.9
+Export-Package: org.epics.pvdata.accessSecurity;version="6.1.10",org.epi
+ cs.pvdata.copy;version="6.1.10";uses:="org.epics.pvdata.misc,org.epics.
+ pvdata.pv",org.epics.pvdata.factory;version="6.1.10";uses:="org.epics.p
+ vdata.misc,org.epics.pvdata.pv,org.epics.util.array",org.epics.pvdata.m
+ isc;version="6.1.10";uses:="org.epics.pvdata.pv",org.epics.pvdata.monit
+ or;version="6.1.10";uses:="org.epics.pvdata.misc,org.epics.pvdata.pv",o
+ rg.epics.pvdata.property;version="6.1.10";uses:="org.epics.pvdata.pv",o
+ rg.epics.pvdata.pv;version="6.1.10";uses:="org.epics.pvdata.misc,org.ep
+ ics.util.array",org.epics.pvdata.util.namedValues;version="6.1.10",org.
+ epics.pvdata.util.pvDataHelper;version="6.1.10";uses:="org.epics.pvdata
+ .pv"
+Import-Package: org.epics.pvdata.factory;version="[6.1,7)",org.epics.pvd
+ ata.misc;version="[6.1,7)",org.epics.pvdata.pv;version="[6.1,7)",org.ep
+ ics.util.array;version="[1.0,2)"
+Originally-Created-By: Apache Maven Bundle Plugin
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Tool: Bnd-3.3.0.201609221906
+
