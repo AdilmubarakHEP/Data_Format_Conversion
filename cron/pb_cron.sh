@@ -177,7 +177,16 @@ __run() {
 
     echo "[CRON] which bsub: $(command -v bsub || echo 'NOT FOUND')"
     echo "[CRON] running once: $RUN_ONCE_PY"
-    python3 -u "$RUN_ONCE_PY"
+    
+    # Use virtual environment Python if available
+    VENV_PYTHON="$REPO_ROOT/../env/bin/python3"
+    if [[ -x "$VENV_PYTHON" ]]; then
+      echo "[CRON] Using venv Python: $VENV_PYTHON"
+      "$VENV_PYTHON" -u "$RUN_ONCE_PY"
+    else
+      echo "[CRON] Venv not found, using system python3"
+      python3 -u "$RUN_ONCE_PY"
+    fi
     rc=$?
     echo "[CRON] end $(date -Is) rc=$rc"
 
