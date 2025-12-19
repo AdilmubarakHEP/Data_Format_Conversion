@@ -571,8 +571,10 @@ def stream_and_chunk(pb_path: str, output_base: str, rss_cap_gb: float, input_ro
 
     tz = make_tz(tz_offset_hours)
 
-    # Launch Java with a larger pipe buffer and explicit encoding
-    cmd = ["java", "-cp", JAVA_CLASS_PATH, PB2PARQUET_MAIN, pb_path]
+    # Launch Java with heap limit (to stay under batch job memory cap) and larger pipe buffer
+    # -Xmx2500m limits heap to 2.5GB, leaving room for Python + overhead within 4GB job limit
+    java_heap_limit = os.environ.get("PVPIPE_JAVA_HEAP", "2500m")
+    cmd = ["java", f"-Xmx{java_heap_limit}", "-cp", JAVA_CLASS_PATH, PB2PARQUET_MAIN, pb_path]
     proc = subprocess.Popen(
         cmd,
         stdout=subprocess.PIPE,
