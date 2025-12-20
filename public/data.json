@@ -1,9 +1,9 @@
 {
   "progress": {
-    "total": 1847545,
+    "total": 1887139,
     "converted": 1043502,
-    "remaining": 804043,
-    "pct": 56
+    "remaining": 843637,
+    "pct": 55
   },
   "available_months": [
     [
@@ -484,5 +484,5 @@
     "r_active": "#1F77B4",
     "r_queued": "#C7C7C7"
   },
-  "timestamp": "2025-12-19T21:42:00.381591"
+  "timestamp": "2025-12-20T22:16:44.126474"
 }
