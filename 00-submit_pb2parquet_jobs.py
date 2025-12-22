@@ -30,6 +30,7 @@
 
 import os
 import re
+import sys
 import argparse
 import sqlite3
 import glob
@@ -879,7 +880,7 @@ for i, bundle in enumerate(small_bundles):
     if JOB_GROUP:
         cmd_argv += ["-g", JOB_GROUP]
     cmd_argv += [
-        "python3", SMALL_SCRIPT,
+        sys.executable, SMALL_SCRIPT,
         "--input_dir", INPUT_DIR,
         "--chunk_file", bundle_file,
         "--db_path", DB_PATH,
@@ -906,7 +907,7 @@ for j, pb_path in enumerate(big_files):
     if JOB_GROUP:
         cmd_argv += ["-g", JOB_GROUP]
     cmd_argv += [
-        "python3", BIG_CHUNKER,
+        sys.executable, BIG_CHUNKER,
         "--pb", pb_path,
         "--input_root", INPUT_DIR,
         "--rss_cap_gb", str(RSS_CAP_GB),
