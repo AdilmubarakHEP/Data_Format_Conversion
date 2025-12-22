@@ -121,7 +121,7 @@ def submit_pv_merge_jobs(script_03a: str, input_dir: str, delete_chunks: bool,
             "bsub",
             "-q", queue,
             "-J", f"pvmerge_{os.path.basename(pv_final_path)}",
-            "python3", script_03a,
+            sys.executable, script_03a,
             "--input_dir", input_dir,
             "--pv_final_path", pv_final_path
         ]
@@ -155,7 +155,7 @@ def submit_pv_merge_jobs(script_03a: str, input_dir: str, delete_chunks: bool,
 def submit_date_merge_jobs(script_03b: str, input_dir: str, output_dir: str,
                            delete_after_date: bool, queue: str, dry_run: bool) -> int:
     """Submit bsub jobs for date merging by calling 03b without --internal."""
-    cmd = ["python3", script_03b, "--input_dir", input_dir, "--output_dir", output_dir, "--queue", queue]
+    cmd = [sys.executable, script_03b, "--input_dir", input_dir, "--output_dir", output_dir, "--queue", queue]
     
     if delete_after_date:
         cmd.append("--delete_after_date")

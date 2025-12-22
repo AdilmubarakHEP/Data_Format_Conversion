@@ -8,6 +8,7 @@
 
 import os
 import re
+import sys
 import time
 import sqlite3
 import subprocess
@@ -513,7 +514,7 @@ def check_for_finished_submissions():
         try:
             env = os.environ.copy()
             env.setdefault("PVPIPE_CONFIG", os.environ.get("PVPIPE_CONFIG", "/home/belle2/amubarak/Data_Format_Conversion/config.ini"))
-            subprocess.run(["python3", RECOMPUTE_SCRIPT], check=True, env=env)
+            subprocess.run([sys.executable, RECOMPUTE_SCRIPT], check=True, env=env)
             if os.path.exists(summary_path):
                 conn2 = sqlite3.connect(DB_PATH); c2 = conn2.cursor()
                 c2.execute("UPDATE submissions SET is_complete = 1 WHERE timestamp = ?", (timestamp,))
@@ -540,7 +541,7 @@ def submit_merge_jobs():
         env = os.environ.copy()
         env.setdefault("PVPIPE_CONFIG", _CONFIG_PATH)
         
-        cmd = ["python3", MERGE_ORCHESTRATOR_SCRIPT]
+        cmd = [sys.executable, MERGE_ORCHESTRATOR_SCRIPT]
         
         # Only submit enabled merge types
         if ENABLE_PV_MERGE and not ENABLE_DATE_MERGE:
