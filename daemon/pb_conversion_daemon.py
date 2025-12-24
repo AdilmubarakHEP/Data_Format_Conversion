@@ -324,7 +324,7 @@ def submit_conversion():
     env["LOG_DIR_EXTERNAL"] = log_dir
     env["PVPIPE_CONFIG"] = _CONFIG_PATH  # force children to use the same config.ini
 
-    cmd = ["python3", script, "--submit"]
+    cmd = [sys.executable, script, "--submit"]
 
     # Decide how to refresh the catalog for this tick
     force_rebuild = FORCE_REBUILD_ENV or ALWAYS_RESCAN_ON_TICK or (DELTA_SCAN_MINUTES == 0)
