@@ -91,40 +91,48 @@ install() {
 
   mkdir -p "$LOCK_DIR" "$DAEMON_LOG_DIR"
 
-  # Build cron schedule from config
-  local spec
+  # Bake absolute paths into the cron command
+  local RUN_SELF="$SHELL_BIN $REPO_ROOT/cron/pb_cron.sh __run"
+  local CRON_CMD="$SHELL_BIN -lc 'export PVPIPE_CONFIG=\"$CONFIG_PATH\"; export DAEMON_LOG_DIR=\"$DAEMON_LOG_DIR\"; mkdir -p \"$LOCK_DIR\"; touch \"$LOCK_FILE\"; flock -n \"$LOCK_FILE\" -c \"$RUN_SELF\"; rc=\$?; rm -f \"$LOCK_FILE\"; exit \$rc'"
+
+  local tmp
+  tmp="$(mktemp)"
+  crontab -l 2>/dev/null | grep -v "PBPIPE_CRON" > "$tmp" || true
+
   if [[ "$mode" == "daily" ]]; then
-    IFS=: read -r HH MM <<<"$daily_time"
-    [[ -z "$HH" || -z "$MM" ]] && { echo "Bad daily_time '$daily_time' in config"; _finish 2; }
-    spec="$MM $HH * * *"
+    # Support multiple comma-separated times (e.g., "09:12,21:12")
+    local idx=0
+    IFS=',' read -ra TIMES <<< "$daily_time"
+    for t in "${TIMES[@]}"; do
+      t="${t// /}"  # trim spaces
+      IFS=: read -r HH MM <<<"$t"
+      [[ -z "$HH" || -z "$MM" ]] && { echo "Bad daily_time '$t' in config"; _finish 2; }
+      local spec="$MM $HH * * *"
+      if (( idx == 0 )); then
+        echo "$spec $CRON_CMD # PBPIPE_CRON" >> "$tmp"
+      else
+        echo "$spec $CRON_CMD # PBPIPE_CRON_${idx}" >> "$tmp"
+      fi
+      echo "Installed cron: $spec"
+      ((idx++))
+    done
   else
     local poll="${poll_s%%.*}"
     [[ "$poll" =~ ^[0-9]+$ ]] || poll=600
     local minutes=$(( (poll + 59) / 60 ))
     (( minutes < 1 )) && minutes=1
     if (( minutes == 1 )); then
-      spec="* * * * *"
+      local spec="* * * * *"
     else
-      spec="*/${minutes} * * * *"
+      local spec="*/${minutes} * * * *"
     fi
+    echo "$spec $CRON_CMD # PBPIPE_CRON" >> "$tmp"
+    echo "Installed cron: $spec"
   fi
 
-  # inside install()
-  # ...
-  # Bake absolute paths into the cron command
-  local RUN_SELF="$SHELL_BIN $REPO_ROOT/cron/pb_cron.sh __run"   # << run with bash
-  local CRON_CMD="$SHELL_BIN -lc 'export PVPIPE_CONFIG=\"$CONFIG_PATH\"; export DAEMON_LOG_DIR=\"$DAEMON_LOG_DIR\"; mkdir -p \"$LOCK_DIR\"; touch \"$LOCK_FILE\"; flock -n \"$LOCK_FILE\" -c \"$RUN_SELF\"; rc=\$?; rm -f \"$LOCK_FILE\"; exit \$rc'"
-
-  local tmp
-  tmp="$(mktemp)"
-  crontab -l 2>/dev/null | grep -v "PBPIPE_CRON" > "$tmp" || true
-  {
-    echo "$spec $CRON_CMD # PBPIPE_CRON"
-  } >> "$tmp"
   crontab "$tmp"
   rm -f "$tmp"
 
-  echo "Installed cron: $spec"
   echo "Daemon logs: $DAEMON_LOG_DIR"
 }
 
