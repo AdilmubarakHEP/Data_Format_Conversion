@@ -1,9 +1,9 @@
 {
   "progress": {
     "total": 2216338,
-    "converted": 1336857,
-    "remaining": 879481,
-    "pct": 60
+    "converted": 1356546,
+    "remaining": 859792,
+    "pct": 61
   },
   "available_months": [
     [
@@ -617,14 +617,14 @@
         },
         {
           "date": "2026-01-21",
-          "success": 21592,
+          "success": 34236,
           "chunked": 0,
           "skipped": 0,
           "failed": 0
         },
         {
           "date": "2026-01-22",
-          "success": 0,
+          "success": 6907,
           "chunked": 0,
           "skipped": 0,
           "failed": 0
@@ -694,7 +694,7 @@
         }
       ],
       "totals": {
-        "success": 272242,
+        "success": 291793,
         "chunked": 0,
         "skipped": 0,
         "failed": 0
@@ -704,7 +704,7 @@
   "summaries": [],
   "retry": null,
   "all_time": {
-    "success": 1336995,
+    "success": 1356546,
     "failed": 0
   },
   "colors": {
@@ -717,5 +717,5 @@
     "r_active": "#1F77B4",
     "r_queued": "#C7C7C7"
   },
-  "timestamp": "2026-01-21T11:17:05.310601"
+  "timestamp": "2026-01-22T00:47:30.869171"
 }
