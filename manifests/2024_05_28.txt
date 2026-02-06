@@ -1,0 +1,14 @@
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BCM/BCM_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BMDBPM/IC1_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BMDBPM/PX0_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BMDBPM/PX1_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BMDBPM/PX2_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BMDBPM/PX3_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BMDBPM/PX4_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BMDBPM/PY0_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BMDBPM/PY1_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BMDBPM/PY3_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BMDBPM/PY4_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BMDBPM/YPOS_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/SEQ/MAS_READ_2024_2024_05_28.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/u32/in_2024_2024_05_28.parquet

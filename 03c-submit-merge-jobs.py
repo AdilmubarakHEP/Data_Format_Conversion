@@ -152,26 +152,86 @@ def submit_pv_merge_jobs(script_03a: str, input_dir: str, delete_chunks: bool,
     print(f"\nPV merge jobs: submitted={submitted}, skipped={skipped}, failed={failed}")
     return submitted, skipped
 
+def _group_parquets_by_date(input_dir: str) -> dict:
+    """Single walk: collect all non-chunk parquets and group by date from filename."""
+    date_re = re.compile(r"(\d{4}_\d{2}_\d{2})")
+    date_to_files = defaultdict(list)
+    for root, _, files in os.walk(input_dir):
+        for fn in files:
+            if not fn.endswith(".parquet"):
+                continue
+            if is_chunk_file(fn):
+                continue
+            m = date_re.search(fn)
+            if not m:
+                continue
+            date_to_files[m.group(1)].append(os.path.join(root, fn))
+    return dict(date_to_files)
+
+
 def submit_date_merge_jobs(script_03b: str, input_dir: str, output_dir: str,
                            delete_after_date: bool, queue: str, dry_run: bool) -> int:
-    """Submit bsub jobs for date merging by calling 03b without --internal."""
-    cmd = [sys.executable, script_03b, "--input_dir", input_dir, "--output_dir", output_dir, "--queue", queue]
-    
-    if delete_after_date:
-        cmd.append("--delete_after_date")
-    
-    if dry_run:
-        print(f"\n[DRY RUN] Would call 03b to submit date merge jobs:")
-        print(f"  Command: {' '.join(cmd)}")
+    """One scan, write per-date manifests, submit one bsub per date."""
+    print(f"Scanning {input_dir} for parquet files...")
+    date_to_files = _group_parquets_by_date(input_dir)
+
+    if not date_to_files:
+        print("No dates found for date-level merge.")
         return 0
-    
-    print(f"\nSubmitting date merge jobs via 03b...")
-    try:
-        result = subprocess.run(cmd, check=False)
-        return result.returncode
-    except Exception as e:
-        print(f"❌ Failed to call 03b: {e}")
-        return 1
+
+    print(f"Found {sum(len(v) for v in date_to_files.values())} files across {len(date_to_files)} dates.")
+
+    # Write manifests to a temp directory that persists until jobs finish
+    manifest_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "manifests")
+    os.makedirs(manifest_dir, exist_ok=True)
+
+    submitted = 0
+    skipped = 0
+    for date_str in sorted(date_to_files):
+        file_list = date_to_files[date_str]
+
+        # Skip if merged output already exists
+        merged_path = os.path.join(output_dir, f"{date_str}.parquet")
+        if os.path.exists(merged_path):
+            print(f"Skip {date_str}: {merged_path} already exists.")
+            skipped += 1
+            continue
+
+        # Write manifest
+        manifest_path = os.path.join(manifest_dir, f"{date_str}.txt")
+        with open(manifest_path, "w", encoding="utf-8") as mf:
+            mf.write("\n".join(sorted(file_list)))
+
+        if dry_run:
+            print(f"[DRY RUN] {date_str}: {len(file_list)} files → {manifest_path}")
+            submitted += 1
+            continue
+
+        # Submit bsub with manifest
+        argv = [
+            "bsub", "-q", queue,
+            "-J", f"datemerge_{date_str}",
+            sys.executable, script_03b,
+            "--internal", "--date", date_str,
+            "--input_dir", input_dir,
+            "--output_dir", output_dir,
+            "--manifest", manifest_path,
+        ]
+        if delete_after_date:
+            argv.append("--delete_after_date")
+
+        try:
+            r = subprocess.run(argv, check=False, capture_output=True, text=True)
+            if r.returncode == 0:
+                print(f"Submitted merge for {date_str} ({len(file_list)} files)")
+                submitted += 1
+            else:
+                print(f"❌ bsub failed for {date_str}: rc={r.returncode} {r.stderr.strip()}")
+        except Exception as e:
+            print(f"❌ bsub exception for {date_str}: {e}")
+
+    print(f"\nDate merge: submitted={submitted}, skipped={skipped}")
+    return 0
 
 def main():
     ap = argparse.ArgumentParser(description="Master merge orchestrator - submits jobs for PV and date merges.")

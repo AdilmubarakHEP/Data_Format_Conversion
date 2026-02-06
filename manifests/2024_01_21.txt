@@ -1,0 +1,6 @@
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BCM/BCM_2024_2024_01_21.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/MONTEKCBT1/WAVE_2024_2024_01_21.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/MONTEKCBT2/WAVE_2024_2024_01_21.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/MONTEKRTL0/WAVE_2024_2024_01_21.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/MONTEKRTL1/WAVE_2024_2024_01_21.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/u32/in_2024_2024_01_21.parquet

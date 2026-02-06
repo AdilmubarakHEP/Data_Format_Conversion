@@ -540,9 +540,12 @@ def merge_one_date(date_str: str, file_list: List[str], output_dir: str, delete_
 # ---------------- submission ----------------
 def submit_merge_date_job(script_path: str, date_str: str,
                           input_dir: str, output_dir: str,
-                          delete_flag: bool, queue: str) -> int:
+                          delete_flag: bool, queue: str,
+                          manifest_path: str = None) -> int:
     argv = ["bsub", "-q", str(queue), "python3", script_path, "--internal", "--date", date_str,
             "--input_dir", input_dir, "--output_dir", output_dir]
+    if manifest_path:
+        argv += ["--manifest", manifest_path]
     if delete_flag:
         argv.append("--delete_after_date")
     try:
@@ -568,6 +571,7 @@ def main():
     ap.add_argument("--internal", action="store_true",
                     help="Run a single date inline. Requires --date.")
     ap.add_argument("--date", help="YYYY_MM_DD. With --internal: run inline. Without --internal: submit only this date.")
+    ap.add_argument("--manifest", help="Path to a file listing parquet paths (one per line). Skips os.walk when provided.")
     args = ap.parse_args()
 
     script_path = os.path.abspath(__file__)
@@ -577,8 +581,14 @@ def main():
             print("❌ --internal requires --date YYYY_MM_DD")
             sys.exit(2)
         date = args.date
-        date_map = find_all_dates(args.input_dir)
-        files = date_map.get(date, [])
+        if args.manifest and os.path.isfile(args.manifest):
+            # Fast path: read file list from manifest (no os.walk needed)
+            with open(args.manifest, "r", encoding="utf-8") as mf:
+                files = [l.strip() for l in mf if l.strip()]
+            print(f"[MERGE] Read {len(files)} files from manifest {args.manifest}")
+        else:
+            date_map = find_all_dates(args.input_dir)
+            files = date_map.get(date, [])
         if not files:
             print(f"❌ No PV Parquets found for date {date}")
             sys.exit(0)
