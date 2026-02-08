@@ -1,73 +1,765 @@
 {
   "progress": {
-    "total": 456874,
-    "converted": 319725,
-    "remaining": 137149,
-    "pct": 70
+    "total": 2216338,
+    "converted": 1966809,
+    "remaining": 249529,
+    "pct": 89
   },
   "available_months": [
+    [
+      2025,
+      11
+    ],
+    [
+      2025,
+      12
+    ],
+    [
+      2026,
+      1
+    ],
     [
       2026,
       2
     ]
   ],
   "months": {
+    "2025-11": {
+      "year": 2025,
+      "month": 11,
+      "days": [
+        {
+          "date": "2025-11-01",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-02",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-03",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-04",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-05",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-06",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-07",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-08",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-09",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-10",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-11",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-12",
+          "success": 36143,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-13",
+          "success": 114134,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-14",
+          "success": 173357,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-15",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-16",
+          "success": 28273,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-17",
+          "success": 128993,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-18",
+          "success": 21006,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-19",
+          "success": 51773,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-20",
+          "success": 67518,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-21",
+          "success": 52003,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-22",
+          "success": 48393,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-23",
+          "success": 47836,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-24",
+          "success": 28838,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-25",
+          "success": 24469,
+          "chunked": 44,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-26",
+          "success": 29105,
+          "chunked": 8,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-27",
+          "success": 51247,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-28",
+          "success": 51022,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-29",
+          "success": 18655,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-11-30",
+          "success": 4306,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        }
+      ],
+      "totals": {
+        "success": 977071,
+        "chunked": 52,
+        "skipped": 0,
+        "failed": 0
+      }
+    },
+    "2025-12": {
+      "year": 2025,
+      "month": 12,
+      "days": [
+        {
+          "date": "2025-12-01",
+          "success": 3696,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-02",
+          "success": 4345,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-03",
+          "success": 4312,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-04",
+          "success": 3315,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-05",
+          "success": 4221,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-06",
+          "success": 3926,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-07",
+          "success": 4457,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-08",
+          "success": 3995,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-09",
+          "success": 2265,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-10",
+          "success": 3988,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-11",
+          "success": 4432,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-12",
+          "success": 3922,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-13",
+          "success": 3321,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-14",
+          "success": 3972,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-15",
+          "success": 4332,
+          "chunked": 29,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-16",
+          "success": 3583,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-17",
+          "success": 4349,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-18",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-19",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-20",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-21",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-22",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-23",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-24",
+          "success": 4670,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-25",
+          "success": 3533,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-26",
+          "success": 4598,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-27",
+          "success": 4314,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-28",
+          "success": 3694,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-29",
+          "success": 442,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-30",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2025-12-31",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        }
+      ],
+      "totals": {
+        "success": 87682,
+        "chunked": 29,
+        "skipped": 0,
+        "failed": 0
+      }
+    },
+    "2026-01": {
+      "year": 2026,
+      "month": 1,
+      "days": [
+        {
+          "date": "2026-01-01",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-02",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-03",
+          "success": 0,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-04",
+          "success": 3931,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-05",
+          "success": 4064,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-06",
+          "success": 3651,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-07",
+          "success": 4039,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-08",
+          "success": 1424,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-09",
+          "success": 1551,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-10",
+          "success": 1461,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-11",
+          "success": 1546,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-12",
+          "success": 9056,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-13",
+          "success": 9179,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-14",
+          "success": 9025,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-15",
+          "success": 9180,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-16",
+          "success": 44508,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-17",
+          "success": 39623,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-18",
+          "success": 39385,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-19",
+          "success": 32321,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-20",
+          "success": 36706,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-21",
+          "success": 34236,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-22",
+          "success": 45983,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-23",
+          "success": 39788,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-24",
+          "success": 36198,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-25",
+          "success": 39834,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-26",
+          "success": 39478,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-27",
+          "success": 26576,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-28",
+          "success": 32708,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-29",
+          "success": 36332,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-30",
+          "success": 42134,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        },
+        {
+          "date": "2026-01-31",
+          "success": 39733,
+          "chunked": 0,
+          "skipped": 0,
+          "failed": 0
+        }
+      ],
+      "totals": {
+        "success": 663650,
+        "chunked": 0,
+        "skipped": 0,
+        "failed": 0
+      }
+    },
     "2026-02": {
       "year": 2026,
       "month": 2,
       "days": [
         {
           "date": "2026-02-01",
-          "success": 0,
+          "success": 33500,
           "chunked": 0,
           "skipped": 0,
           "failed": 0
         },
         {
           "date": "2026-02-02",
-          "success": 0,
+          "success": 34216,
           "chunked": 0,
           "skipped": 0,
           "failed": 0
         },
         {
           "date": "2026-02-03",
-          "success": 0,
+          "success": 37748,
           "chunked": 0,
           "skipped": 0,
           "failed": 0
         },
         {
           "date": "2026-02-04",
-          "success": 0,
+          "success": 14715,
           "chunked": 0,
           "skipped": 0,
           "failed": 0
         },
         {
           "date": "2026-02-05",
-          "success": 0,
+          "success": 39776,
           "chunked": 0,
           "skipped": 0,
           "failed": 0
         },
         {
           "date": "2026-02-06",
-          "success": 170244,
+          "success": 23866,
           "chunked": 0,
           "skipped": 0,
           "failed": 0
         },
         {
           "date": "2026-02-07",
-          "success": 149481,
+          "success": 35749,
           "chunked": 0,
           "skipped": 0,
           "failed": 0
         },
         {
           "date": "2026-02-08",
-          "success": 0,
+          "success": 18836,
           "chunked": 0,
           "skipped": 0,
           "failed": 0
@@ -214,7 +906,7 @@
         }
       ],
       "totals": {
-        "success": 319725,
+        "success": 238406,
         "chunked": 0,
         "skipped": 0,
         "failed": 0
@@ -224,7 +916,7 @@
   "summaries": [],
   "retry": null,
   "all_time": {
-    "success": 319725,
+    "success": 1966809,
     "failed": 0
   },
   "colors": {
@@ -237,5 +929,5 @@
     "r_active": "#1F77B4",
     "r_queued": "#C7C7C7"
   },
-  "timestamp": "2026-02-07T10:31:36.472619"
+  "timestamp": "2026-02-08T11:19:13.705781"
 }
