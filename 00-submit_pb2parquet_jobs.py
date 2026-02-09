@@ -346,9 +346,14 @@ def get_job_info_for_paths(pb_paths):
         return {}
     conn = _db_connect(timeout_s=60)
     c = conn.cursor()
-    qmarks = ",".join(["?"] * len(pb_paths))
-    c.execute(f"SELECT pb_path, job_id, submit_ts FROM lsf_jobs WHERE pb_path IN ({qmarks})", pb_paths)
-    out = {row[0]: (row[1], row[2]) for row in c.fetchall()}
+    out = {}
+    # Batch to avoid SQLite variable limit (max ~999)
+    batch_size = 900
+    for i in range(0, len(pb_paths), batch_size):
+        batch = pb_paths[i:i + batch_size]
+        qmarks = ",".join(["?"] * len(batch))
+        c.execute(f"SELECT pb_path, job_id, submit_ts FROM lsf_jobs WHERE pb_path IN ({qmarks})", batch)
+        out.update({row[0]: (row[1], row[2]) for row in c.fetchall()})
     conn.close()
     return out
 

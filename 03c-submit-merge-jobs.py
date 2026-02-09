@@ -75,33 +75,41 @@ def chunk_base_and_index(filename: str):
         return None, None
     return m.group("base"), int(m.group("idx"))
 
-def find_chunk_groups(input_dir: str) -> Dict[str, List[str]]:
-    """Find all PV chunk groups that need merging."""
-    groups = defaultdict(list)
+def _single_walk(input_dir: str):
+    """One walk over input_dir. Returns (chunk_groups, date_to_files)."""
+    date_re = re.compile(r"(\d{4}_\d{2}_\d{2})")
+    chunk_groups = defaultdict(list)
+    date_to_files = defaultdict(list)
+
     for root, _, files in os.walk(input_dir):
         for fn in files:
             if not fn.endswith(".parquet"):
                 continue
-            if not is_chunk_file(fn):
-                continue
-            base, idx = chunk_base_and_index(fn)
-            if base is None:
-                continue
-            final_path = os.path.join(root, f"{base}.parquet")
-            chunk_path = os.path.join(root, fn)
-            groups[final_path].append((idx, chunk_path))
-    
+            full_path = os.path.join(root, fn)
+            if is_chunk_file(fn):
+                base, idx = chunk_base_and_index(fn)
+                if base is not None:
+                    final_path = os.path.join(root, f"{base}.parquet")
+                    chunk_groups[final_path].append((idx, full_path))
+            else:
+                m = date_re.search(fn)
+                if m:
+                    date_to_files[m.group(1)].append(full_path)
+
+    # Sort chunk groups by index
     sorted_groups = {}
-    for final_path, items in groups.items():
+    for final_path, items in chunk_groups.items():
         items.sort(key=lambda t: t[0])
         sorted_groups[final_path] = [p for _, p in items]
-    return sorted_groups
+
+    return sorted_groups, dict(date_to_files)
 
 # ---- job submission ----
 def submit_pv_merge_jobs(script_03a: str, input_dir: str, delete_chunks: bool,
-                         sort_by_time: bool, queue: str, dry_run: bool) -> tuple:
+                         sort_by_time: bool, queue: str, dry_run: bool,
+                         precomputed_groups: Dict = None) -> tuple:
     """Submit bsub jobs for PV chunk merging (one job per PV)."""
-    groups = find_chunk_groups(input_dir)
+    groups = precomputed_groups if precomputed_groups is not None else _single_walk(input_dir)[0]
     if not groups:
         print("No PV chunk groups found.")
         return 0, 0
@@ -152,28 +160,11 @@ def submit_pv_merge_jobs(script_03a: str, input_dir: str, delete_chunks: bool,
     print(f"\nPV merge jobs: submitted={submitted}, skipped={skipped}, failed={failed}")
     return submitted, skipped
 
-def _group_parquets_by_date(input_dir: str) -> dict:
-    """Single walk: collect all non-chunk parquets and group by date from filename."""
-    date_re = re.compile(r"(\d{4}_\d{2}_\d{2})")
-    date_to_files = defaultdict(list)
-    for root, _, files in os.walk(input_dir):
-        for fn in files:
-            if not fn.endswith(".parquet"):
-                continue
-            if is_chunk_file(fn):
-                continue
-            m = date_re.search(fn)
-            if not m:
-                continue
-            date_to_files[m.group(1)].append(os.path.join(root, fn))
-    return dict(date_to_files)
-
-
 def submit_date_merge_jobs(script_03b: str, input_dir: str, output_dir: str,
-                           delete_after_date: bool, queue: str, dry_run: bool) -> int:
-    """One scan, write per-date manifests, submit one bsub per date."""
-    print(f"Scanning {input_dir} for parquet files...")
-    date_to_files = _group_parquets_by_date(input_dir)
+                           delete_after_date: bool, queue: str, dry_run: bool,
+                           precomputed_dates: dict = None) -> int:
+    """Write per-date manifests, submit one bsub per date."""
+    date_to_files = precomputed_dates if precomputed_dates is not None else _single_walk(input_dir)[1]
 
     if not date_to_files:
         print("No dates found for date-level merge.")
@@ -265,21 +256,29 @@ def main():
             print(f"   {m}")
         sys.exit(1)
 
+    # Single walk for both stages
+    print(f"Scanning {args.input_dir} for parquet files...")
+    chunk_groups, date_to_files = _single_walk(args.input_dir)
+    print(f"Found {sum(len(v) for v in chunk_groups.values())} chunk files in {len(chunk_groups)} groups, "
+          f"{sum(len(v) for v in date_to_files.values())} date files across {len(date_to_files)} dates.")
+
     # Submit PV merge jobs unless --date_only
     if not args.date_only:
         print("=" * 70)
         print("STAGE 1: PV Chunk Merge (03a)")
         print("=" * 70)
         submit_pv_merge_jobs(script_03a, args.input_dir, args.delete_chunks,
-                             args.sort_by_time, args.queue, args.dry_run)
-    
+                             args.sort_by_time, args.queue, args.dry_run,
+                             precomputed_groups=chunk_groups)
+
     # Submit date merge jobs unless --pv_only
     if not args.pv_only:
         print("\n" + "=" * 70)
         print("STAGE 2: Date Merge (03b)")
         print("=" * 70)
         rc = submit_date_merge_jobs(script_03b, args.input_dir, args.output_dir,
-                                     args.delete_after_date, args.queue, args.dry_run)
+                                     args.delete_after_date, args.queue, args.dry_run,
+                                     precomputed_dates=date_to_files)
         if rc != 0:
             print(f"❌ Date merge submission failed with exit code {rc}")
             sys.exit(rc)
