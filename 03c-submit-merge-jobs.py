@@ -76,25 +76,34 @@ def chunk_base_and_index(filename: str):
     return m.group("base"), int(m.group("idx"))
 
 def _single_walk(input_dir: str):
-    """One walk over input_dir. Returns (chunk_groups, date_to_files)."""
+    """Fast scan using 'find' command instead of os.walk. Returns (chunk_groups, date_to_files)."""
+    import subprocess as _sp
+
     date_re = re.compile(r"(\d{4}_\d{2}_\d{2})")
     chunk_groups = defaultdict(list)
     date_to_files = defaultdict(list)
 
-    for root, _, files in os.walk(input_dir):
-        for fn in files:
-            if not fn.endswith(".parquet"):
-                continue
-            full_path = os.path.join(root, fn)
-            if is_chunk_file(fn):
-                base, idx = chunk_base_and_index(fn)
-                if base is not None:
-                    final_path = os.path.join(root, f"{base}.parquet")
-                    chunk_groups[final_path].append((idx, full_path))
-            else:
-                m = date_re.search(fn)
-                if m:
-                    date_to_files[m.group(1)].append(full_path)
+    # Use 'find' which is much faster than os.walk on GPFS
+    proc = _sp.Popen(
+        ["find", input_dir, "-name", "*.parquet", "-type", "f"],
+        stdout=_sp.PIPE, stderr=_sp.DEVNULL, text=True
+    )
+
+    for line in proc.stdout:
+        full_path = line.rstrip("\n")
+        fn = os.path.basename(full_path)
+        if is_chunk_file(fn):
+            base, idx = chunk_base_and_index(fn)
+            if base is not None:
+                root = os.path.dirname(full_path)
+                final_path = os.path.join(root, f"{base}.parquet")
+                chunk_groups[final_path].append((idx, full_path))
+        else:
+            m = date_re.search(fn)
+            if m:
+                date_to_files[m.group(1)].append(full_path)
+
+    proc.wait()
 
     # Sort chunk groups by index
     sorted_groups = {}
