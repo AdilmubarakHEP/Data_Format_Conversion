@@ -488,6 +488,22 @@ def _lsf_state(job_id: str) -> Optional[str]:
     except Exception:
         return None
 
+def _lsf_active_jobs() -> Dict[str, str]:
+    """Get all active job states in ONE bjobs call. Returns {job_id: state}."""
+    try:
+        r = subprocess.run(["bash", "-lc", "bjobs -noheader -o 'jobid stat' 2>/dev/null"],
+                           capture_output=True, text=True, timeout=30)
+        if r.returncode != 0:
+            return {}
+        result = {}
+        for line in (r.stdout or "").strip().splitlines():
+            parts = line.split()
+            if len(parts) >= 2:
+                result[parts[0]] = parts[1]
+        return result
+    except Exception:
+        return {}
+
 def _maybe_bkill(job_id: str):
     try:
         subprocess.run(["bash", "-lc", f"bkill {job_id}"], capture_output=True, text=True, timeout=10)
@@ -509,8 +525,12 @@ def sweep_stale_queued_lsf(hours: float) -> int:
     if not queued_rows:
         return 0
 
+    print(f"Sweeper: checking {len(queued_rows)} stale queued/running entries...")
     paths = [p for p, _ in queued_rows]
     job_map = get_job_info_for_paths(paths)
+
+    # One bjobs call to get all active job states
+    active_jobs = _lsf_active_jobs()
 
     kill_after = KILL_AFTER_HOURS if (KILL_ON_SWEEP and KILL_AFTER_HOURS) else None
     now = datetime.now()
@@ -530,7 +550,8 @@ def sweep_stale_queued_lsf(hours: float) -> int:
             to_mark.append((pb_path, "stale (lsf-aware): no job_id recorded"))
             continue
 
-        state = _lsf_state(job_id)
+        # Look up state from the single batch call (missing = job finished/gone)
+        state = active_jobs.get(job_id)
         if state in (None, "DONE", "EXIT", "ZOMBI", "UNKWN"):
             to_mark.append((pb_path, f"stale (lsf-aware): LSF state {state or 'missing'} for job {job_id}"))
             continue
