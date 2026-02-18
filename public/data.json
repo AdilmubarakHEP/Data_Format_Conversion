@@ -823,14 +823,14 @@
         {
           "date": "2026-02-17",
           "success": 4649,
-          "chunked": 436,
+          "chunked": 74,
           "skipped": 0,
           "failed": 0
         },
         {
           "date": "2026-02-18",
           "success": 0,
-          "chunked": 0,
+          "chunked": 307,
           "skipped": 0,
           "failed": 0
         },
@@ -907,7 +907,7 @@
       ],
       "totals": {
         "success": 483485,
-        "chunked": 436,
+        "chunked": 381,
         "skipped": 0,
         "failed": 0
       }
@@ -929,5 +929,5 @@
     "r_active": "#1F77B4",
     "r_queued": "#C7C7C7"
   },
-  "timestamp": "2026-02-17T21:54:06.459152"
+  "timestamp": "2026-02-18T09:43:38.185645"
 }
