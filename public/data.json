@@ -858,14 +858,14 @@
         {
           "date": "2026-02-22",
           "success": 0,
-          "chunked": 314,
+          "chunked": 0,
           "skipped": 0,
           "failed": 0
         },
         {
           "date": "2026-02-23",
           "success": 0,
-          "chunked": 0,
+          "chunked": 260,
           "skipped": 0,
           "failed": 0
         },
@@ -907,7 +907,7 @@
       ],
       "totals": {
         "success": 483503,
-        "chunked": 386,
+        "chunked": 332,
         "skipped": 0,
         "failed": 0
       }
@@ -929,5 +929,5 @@
     "r_active": "#1F77B4",
     "r_queued": "#C7C7C7"
   },
-  "timestamp": "2026-02-22T21:36:39.357553"
+  "timestamp": "2026-02-23T09:52:25.774602"
 }
