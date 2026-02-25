@@ -1,8 +1,8 @@
 {
   "progress": {
     "total": 2216338,
-    "converted": 2211906,
-    "remaining": 4432,
+    "converted": 2213389,
+    "remaining": 2949,
     "pct": 100
   },
   "available_months": [
@@ -199,15 +199,15 @@
         {
           "date": "2025-11-25",
           "success": 24469,
-          "chunked": 42,
-          "skipped": 0,
+          "chunked": 0,
+          "skipped": 42,
           "failed": 0
         },
         {
           "date": "2025-11-26",
           "success": 29105,
-          "chunked": 8,
-          "skipped": 0,
+          "chunked": 0,
+          "skipped": 8,
           "failed": 0
         },
         {
@@ -241,8 +241,8 @@
       ],
       "totals": {
         "success": 977071,
-        "chunked": 50,
-        "skipped": 0,
+        "chunked": 0,
+        "skipped": 50,
         "failed": 0
       }
     },
@@ -351,8 +351,8 @@
         {
           "date": "2025-12-15",
           "success": 4332,
-          "chunked": 29,
-          "skipped": 0,
+          "chunked": 0,
+          "skipped": 29,
           "failed": 0
         },
         {
@@ -470,8 +470,8 @@
       ],
       "totals": {
         "success": 87682,
-        "chunked": 29,
-        "skipped": 0,
+        "chunked": 0,
+        "skipped": 29,
         "failed": 0
       }
     },
@@ -823,8 +823,8 @@
         {
           "date": "2026-02-17",
           "success": 4649,
-          "chunked": 72,
-          "skipped": 0,
+          "chunked": 0,
+          "skipped": 72,
           "failed": 0
         },
         {
@@ -865,21 +865,21 @@
         {
           "date": "2026-02-23",
           "success": 0,
-          "chunked": 2,
-          "skipped": 0,
+          "chunked": 0,
+          "skipped": 2,
           "failed": 0
         },
         {
           "date": "2026-02-24",
           "success": 0,
-          "chunked": 214,
-          "skipped": 0,
+          "chunked": 0,
+          "skipped": 1330,
           "failed": 0
         },
         {
           "date": "2026-02-25",
           "success": 0,
-          "chunked": 0,
+          "chunked": 563,
           "skipped": 0,
           "failed": 0
         },
@@ -907,8 +907,8 @@
       ],
       "totals": {
         "success": 483503,
-        "chunked": 288,
-        "skipped": 0,
+        "chunked": 563,
+        "skipped": 1404,
         "failed": 0
       }
     }
@@ -929,5 +929,5 @@
     "r_active": "#1F77B4",
     "r_queued": "#C7C7C7"
   },
-  "timestamp": "2026-02-24T09:37:23.119485"
+  "timestamp": "2026-02-25T13:17:57.671752"
 }

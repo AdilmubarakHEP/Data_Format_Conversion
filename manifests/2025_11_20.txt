@@ -2746,6 +2746,7 @@
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTiPS/HL022E/IMON-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTiPS/HL022E/KMON-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTnBPM/MONTEKLTR0/WAVE-2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTnBPM/MONTEKLTR0/WAVE2_2025_11_20_2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTnBPM/MONTEKLTR1/WAVE-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTnBPM/MONTEKLTR1/WAVE2-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTnBPM/QLD4N_1/NC_1Hz-2025_11_20.parquet
@@ -4905,6 +4906,7 @@
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTpREC/BEND/T/BH3P4COIL1/VAL-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTpREC/BEND/T/BH3P6/VAL-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTsBPM/MONTEKRTL1/WAVE-2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTsBPM/MONTEKRTL1/WAVE2_2025_11_20_2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTsBPM/QLD1S_1/NC_1Hz-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTsBPM/QLD1S_1/XPOS_1Hz-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/BT/arch/mts/ArchiverStore/BTsBPM/QLD1S_1/YPOS_1Hz-2025_11_20.parquet
@@ -35219,6 +35221,7 @@
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_OPT/LER/ver/betak-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/A/IntegratedSignal/Avg-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/A/IntegratedSignal/Max-2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/A/MaxReduction_2025_11_20_2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/A/Peak/Avg-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/A/Peak/Max-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/A/SignalDuration/Avg-2025_11_20.parquet
@@ -35227,6 +35230,7 @@
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/B/IntegratedSignal/Entries-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/B/IntegratedSignal/Max-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/B/IntegratedSignal/StdDev-2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/B/MaxReduction_2025_11_20_2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/B/Peak/Avg-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/B/Peak/Entries-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/B/Peak/Max-2025_11_20.parquet
@@ -35235,10 +35239,13 @@
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/B/SignalDuration/Entries-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/B/SignalDuration/Max-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/B/SignalDuration/StdDev-2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/C/AvgReduction_2025_11_20_2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/C/MaxReduction_2025_11_20_2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/D/IntegratedSignal/Avg-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/D/IntegratedSignal/Entries-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/D/IntegratedSignal/Max-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/D/IntegratedSignal/StdDev-2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/D/MaxReduction_2025_11_20_2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/D/Peak/Avg-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/D/Peak/Entries-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/D/Peak/Max-2025_11_20.parquet
@@ -35247,10 +35254,13 @@
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/D/SignalDuration/Entries-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/D/SignalDuration/Max-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/D/SignalDuration/StdDev-2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/E/AvgReduction_2025_11_20_2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/E/MaxReduction_2025_11_20_2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/F/IntegratedSignal/Avg-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/F/IntegratedSignal/Entries-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/F/IntegratedSignal/Max-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/F/IntegratedSignal/StdDev-2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/F/MaxReduction_2025_11_20_2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/F/Peak/Avg-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/F/Peak/Entries-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/F/Peak/Max-2025_11_20.parquet
@@ -35259,6 +35269,9 @@
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/F/SignalDuration/Entries-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/F/SignalDuration/Max-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/F/SignalDuration/StdDev-2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/G/AvgReduction_2025_11_20_2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/G/MaxReduction_2025_11_20_2025_11_20.parquet
+/gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_SVD/InjMon/Ch/H/AvgReduction_2025_11_20_2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_VXD/Rad/BP_BW_215/DoseRate-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_VXD/Rad/BP_BW_325/DoseRate-2025_11_20.parquet
 /gpfs/group/belle2/group/accelerator/pv/2025c/MTS_parquet/converted_flat2/users/arch/mts/ArchiverStore/B2_VXD/Rad/BP_FW_325/DoseRate-2025_11_20.parquet
